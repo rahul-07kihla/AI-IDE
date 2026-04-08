@@ -1,0 +1,27 @@
+{
+  "name": "@ai-ide/web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "NOVA_NEXT_DIST_DIR=.next-dev next dev -H 127.0.0.1 -p 3001",
+    "build": "NOVA_NEXT_DIST_DIR=.next-prod next build",
+    "start": "NOVA_NEXT_DIST_DIR=.next-prod next start -H 127.0.0.1 -p 3001",
+    "lint": "tsc -p tsconfig.json --noEmit",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@ai-ide/shared": "workspace:*",
+    "next": "^15.0.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "zustand": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.8.1",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13"
+  }
+}

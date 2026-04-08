@@ -1,0 +1,21 @@
+{
+  "name": "ai-ide-platform",
+  "private": true,
+  "packageManager": "pnpm@9.15.0",
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "format": "prettier --write .",
+    "db:generate": "pnpm --filter @ai-ide/api prisma:generate",
+    "db:migrate": "pnpm --filter @ai-ide/api prisma:migrate",
+    "desktop:dev": "pnpm --filter @ai-ide/desktop dev",
+    "desktop:build": "pnpm --filter @ai-ide/desktop build"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "turbo": "^2.0.12",
+    "typescript": "^5.6.3"
+  }
+}

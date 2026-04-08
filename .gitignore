@@ -1,0 +1,11 @@
+node_modules
+.next
+dist
+coverage
+.turbo
+.env
+.env.local
+pnpm-lock.yaml
+*.log
+prisma/dev.db
+

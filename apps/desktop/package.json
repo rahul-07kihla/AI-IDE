@@ -1,0 +1,62 @@
+{
+  "name": "@ai-ide/desktop",
+  "version": "0.1.0",
+  "private": true,
+  "main": "main.js",
+  "description": "Nova IDE desktop application",
+  "homepage": "https://novaide.local",
+  "author": {
+    "name": "Nova IDE",
+    "email": "support@novaide.local"
+  },
+  "scripts": {
+    "dev": "electron .",
+    "build:web": "NOVA_NEXT_DIST_DIR=.next-desktop-export pnpm --dir ../web build",
+    "build": "pnpm run build:web && electron-builder"
+  },
+  "build": {
+    "appId": "com.novaide.desktop",
+    "productName": "Nova IDE",
+    "artifactName": "nova-ide-${version}-${arch}.${ext}",
+    "executableName": "nova-ide",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      {
+        "from": "../web/out",
+        "to": "web-out",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Development",
+      "maintainer": "Nova IDE <support@novaide.local>",
+      "desktop": {
+        "Name": "nova-ide"
+      }
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ]
+    }
+  },
+  "devDependencies": {
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8"
+  }
+}

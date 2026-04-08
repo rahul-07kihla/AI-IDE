@@ -1,0 +1,12 @@
+{
+  "name": "@ai-ide/sandbox-worker",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "node --watch src/main.js",
+    "build": "echo sandbox-worker-build",
+    "lint": "echo sandbox-worker-lint",
+    "typecheck": "echo sandbox-worker-typecheck"
+  }
+}
+
